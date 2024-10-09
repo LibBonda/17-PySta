@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Online Electronics Shop with Integration to Shopify, Amazon, eBay, WooCommerce, and Alibaba">
+    <meta name="keywords" content="Electronics, Smartphones, Laptops, Gadgets, Buy Online, Tech">
+    <meta name="author" content="Your Shop Name">
+    <title>Online Electronics Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#">TechShop</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Brands</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+                <li><a href="#"><i class="fa fa-shopping-cart"></i> Cart (0)</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products..." />
+            <button>Search</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide" style="background-image: url('banner1.jpg');">
+                <div class="slide-content">
+                    <h2>Latest Smartphones at Unbeatable Prices</h2>
+                    <a href="#" class="cta-btn">Shop Now</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('banner2.jpg');">
+                <div class="slide-content">
+                    <h2>Shop Electronics from Amazon, eBay, Alibaba & More</h2>
+                    <a href="#" class="cta-btn">Explore Deals</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('banner3.jpg');">
+                <div class="slide-content">
+                    <h2>Exclusive Discounts on Smart Gadgets</h2>
+                    <a href="#" class="cta-btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section class="product-categories">
+        <h2>Shop by Category</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="smartphones.jpg" alt="Smartphones">
+                <a href="#">Smartphones</a>
+            </div>
+            <div class="category">
+                <img src="laptops.jpg" alt="Laptops">
+                <a href="#">Laptops</a>
+            </div>
+            <div class="category">
+                <img src="tablets.jpg" alt="Tablets">
+                <a href="#">Tablets</a>
+            </div>
+            <div class="category">
+                <img src="gaming.jpg" alt="Gaming">
+                <a href="#">Gaming Consoles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="products-grid" id="products-grid">
+            <!-- Products will be dynamically loaded here -->
+        </div>
+        <div class="platform-buttons">
+            <button id="loadShopify">Load from Shopify</button>
+            <button id="loadWooCommerce">Load from WooCommerce</button>
+            <button id="loadAmazon">Load from Amazon</button>
+            <button id="loadEbay">Load from eBay</button>
+            <button id="loadAlibaba">Load from Alibaba</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-media">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+            <div class="newsletter">
+                <h4>Subscribe to Newsletter</h4>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <p>&copy; 2024 TechShop. All rights reserved.</p>
+    </footer>
+</body>
+</html>
