@@ -1,0 +1,76 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+datasource db {
+  provider = "mysql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+// 1. The Car Brand (e.g., Porsche, Tesla)
+model Brand {
+  id      String  @id @default(uuid())
+  name    String  @unique
+  logoUrl String?
+  models  Model[]
+}
+
+// 2. The General Model (e.g., Model S, Taycan)
+model Model {
+  id         String      @id @default(uuid())
+  name       String
+  bodyType   String // SUV, Sedan, etc.
+  fuelType   String // EV, Hybrid, Petrol
+  brandId    String
+  brand      Brand       @relation(fields: [brandId], references: [id])
+  inventory  Inventory[]
+  leaseTerms LeaseTerm[]
+}
+
+// 3. The Physical Inventory (Specific Cars by VIN)
+model Inventory {
+  vin           String     @id // Vehicle Identification Number
+  modelId       String
+  model         Model      @relation(fields: [modelId], references: [id])
+  colorExterior String
+  colorInterior String
+  mileage       Int        @default(0)
+  status        Status     @default(AVAILABLE) // Enum for professional tracking
+  contracts     Contract[]
+}
+
+// 4. Financial Terms
+model LeaseTerm {
+  id             Int    @id @default(autoincrement())
+  modelId        String
+  model          Model  @relation(fields: [modelId], references: [id])
+  months         Int // 24, 36, 48
+  milesPerYear   Int // 10000, 12000
+  monthlyPayment Float
+  downPayment    Float
+}
+
+// 5. Active Leases (Linking Users to Cars)
+model Contract {
+  id              String    @id @default(uuid())
+  userId          String // From your Auth provider (Clerk/NextAuth)
+  vin             String
+  inventory       Inventory @relation(fields: [vin], references: [vin])
+  startDate       DateTime  @default(now())
+  endDate         DateTime
+  status          String    @default("ACTIVE") // ACTIVE, COMPLETED, TERMINATED
+  stripeSessionId String?   @unique
+}
+
+enum Status {
+  AVAILABLE
+  LEASED
+  MAINTENANCE
+  RESERVED
+}

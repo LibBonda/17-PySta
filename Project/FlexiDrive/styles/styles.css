@@ -1,0 +1,179 @@
+/* ------------------------------
+   FlexiDrive — Dark Theme Styles
+   ------------------------------ */
+
+:root {
+  --bg: #0a0a0f;
+  --bg-alt: #11121a;
+  --text: #f5f5f7;
+  --muted: #a0a3b1;
+  --accent: #3b82f6;
+  --accent-soft: rgba(59,130,246,0.15);
+  --card-bg: #161823;
+  --radius: 12px;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ------------------------------
+   Header
+   ------------------------------ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 6vw;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.header nav a {
+  margin-left: 1.5rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.header nav a:hover {
+  color: var(--text);
+}
+
+/* ------------------------------
+   Hero Section
+   ------------------------------ */
+
+.hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  color: var(--muted);
+  max-width: 32rem;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #020617;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1.6rem;
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.45);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 16px 40px rgba(59, 130, 246, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ------------------------------
+   Sections
+   ------------------------------ */
+
+.section {
+  padding: 4rem 6vw;
+}
+
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* ------------------------------
+   Deal Cards
+   ------------------------------ */
+
+.deal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.deal-card {
+  background: var(--card-bg);
+  padding: 1.4rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.deal-card:hover {
+  transform: translateY(-4px);
+}
+
+.deal-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.price {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.btn-secondary {
+  background: var(--accent-soft);
+  color: var(--text);
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #020617;
+}
+
+/* ------------------------------
+   Responsive
+   ------------------------------ */
+
+@media (max-width: 900px) {
+  .hero {
+    height: 60vh;
+    padding-top: 4rem;
+  }
+}
+

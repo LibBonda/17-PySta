@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "make": "Audi",
+    "model": "A3 Sportback",
+    "price_per_month": 299,
+    "term_months": 36,
+    "mileage_per_year": 10000,
+    "upfront_payment": 1500,
+    "image": "images/placeholder-car-1.jpg"
+  },
+  {
+    "id": 2,
+    "make": "BMW",
+    "model": "3 Series",
+    "price_per_month": 349,
+    "term_months": 36,
+    "mileage_per_year": 8000,
+    "upfront_payment": 2000,
+    "image": "images/placeholder-car-2.jpg"
+  },
+  {
+    "id": 3,
+    "make": "Mercedes",
+    "model": "A-Class",
+    "price_per_month": 319,
+    "term_months": 24,
+    "mileage_per_year": 10000,
+    "upfront_payment": 1800,
+    "image": "images/placeholder-car-3.jpg"
+  }
+]

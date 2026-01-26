@@ -1,0 +1,27 @@
+{
+  "name": "flexidrive",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node index.js",
+    "seed": "npx prisma db seed"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.30",
+    "dotenv": "^16.6.1",
+    "prisma": "^7.3.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "prisma": {
+    "seed": "node -r tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/adapter-mariadb": "^7.3.0",
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
+    "mariadb": "^3.4.5",
+    "pg": "^8.17.2"
+  }
+}
